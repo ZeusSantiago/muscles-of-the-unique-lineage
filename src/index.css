@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  border: solid black 2px;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+.label {
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.btn {
+  border: solid black 2px;
+  border-radius: 6px;
+  padding: 0 10px;
+}
