@@ -1,7 +1,14 @@
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+
 function App() {
   return (
     <>
-      <div className="border 2 border-black p-2">ASdagmag</div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
