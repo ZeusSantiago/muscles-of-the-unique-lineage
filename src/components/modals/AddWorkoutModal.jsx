@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const AddWorkoutModal = () => {
+const AddWorkoutModal = ({ fetchData }) => {
   const formRef = useRef(null);
   const [workoutDetails, setWorkoutDetails] = useState({
     name: "",
@@ -29,6 +29,7 @@ const AddWorkoutModal = () => {
 
     const json = await response.json();
     console.log(json);
+    fetchData();
   };
 
   return (

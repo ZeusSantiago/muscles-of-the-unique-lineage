@@ -11,17 +11,28 @@ const LandingPage = () => {
     intensity: 2,
   });
   const [hidden, setHidden] = useState(true);
+  const [workouts, setWorkouts] = useState([]);
+  const fetchData = () => {
+    fetch("https://motul-backend.vercel.app/api/workouts/")
+      .then((res) => res.json())
+      .then((res) => {
+        setWorkouts(res);
+      });
+  };
   return (
     <>
-      <AddWorkoutModal />
+      <AddWorkoutModal fetchData={fetchData} />
       <WorkoutList
         setCurrentWorkout={setCurrentWorkout}
         setHidden={setHidden}
+        workouts={workouts}
+        fetchData={fetchData}
       />
       <UpdateWorkoutModal
         workoutData={currentWorkout}
         hidden={hidden}
         setHidden={setHidden}
+        fetchData={fetchData}
       />
     </>
   );
