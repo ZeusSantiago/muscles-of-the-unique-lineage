@@ -16,13 +16,16 @@ const AddWorkoutModal = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`http://localhost:3500/api/workouts/`, {
-      method: "POST",
-      body: JSON.stringify({ ...workoutDetails }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://motul-backend.vercel.app/api/workouts/`,
+      {
+        method: "POST",
+        body: JSON.stringify({ ...workoutDetails }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const json = await response.json();
     console.log(json);
@@ -45,6 +48,7 @@ const AddWorkoutModal = () => {
             className="input"
             placeholder="John"
             required
+            autoComplete="true"
             value={workoutDetails.name}
             onChange={handleChange}
           />
@@ -52,10 +56,12 @@ const AddWorkoutModal = () => {
             Muscle Group
           </label>
           <input
+            id="muscleGroup"
             type="text"
             name="muscleGroup"
             className="input"
             placeholder="Chest"
+            autoComplete="true"
             value={workoutDetails.muscleGroup}
             onChange={handleChange}
           />
@@ -63,10 +69,12 @@ const AddWorkoutModal = () => {
             Workout Type
           </label>
           <input
+            id="workoutType"
             type="text"
             name="workoutType"
             className="input"
             placeholder="workoutType"
+            autoComplete="true"
             value={workoutDetails.workoutType}
             onChange={handleChange}
           />
@@ -74,6 +82,7 @@ const AddWorkoutModal = () => {
             Intensity
           </label>
           <select
+            id="intensity"
             className="input w-14"
             name="intensity"
             value={workoutDetails.intensity}
