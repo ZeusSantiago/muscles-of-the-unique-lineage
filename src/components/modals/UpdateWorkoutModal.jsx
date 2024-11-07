@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 
-const UpdateWorkoutModal = ({ workoutData, hidden, setHidden }) => {
+const UpdateWorkoutModal = ({ workoutData, hidden, setHidden, fetchData }) => {
   const formRef = useRef(null);
   const [workoutDetails, setWorkoutDetails] = useState({
     name: workoutData.name,
@@ -34,6 +34,7 @@ const UpdateWorkoutModal = ({ workoutData, hidden, setHidden }) => {
     const json = await response.json();
     console.log(json);
     setHidden(true);
+    fetchData();
   };
 
   return (

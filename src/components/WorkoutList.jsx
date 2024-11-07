@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 
-const WorkoutList = ({ setCurrentWorkout, setHidden }) => {
-  const [workouts, setWorkouts] = useState([]);
-
+const WorkoutList = ({ setCurrentWorkout, setHidden, workouts, fetchData }) => {
   const handleUpdate = (workout) => {
     setHidden(false);
     setCurrentWorkout(workout);
   };
 
-  useEffect(() => {
-    fetch("https://motul-backend.vercel.app/api/workouts/")
+  const handleDelete = (id) => {
+    fetch("https://motul-backend.vercel.app/api/workouts/" + id, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
-      .then((res) => {
-        setWorkouts(res);
-      });
+      .then(() => fetchData());
+  };
+  useEffect(() => {
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -55,7 +56,10 @@ const WorkoutList = ({ setCurrentWorkout, setHidden }) => {
               >
                 Update
               </button>
-              <button className="rounded-lg border-gray-900 bg-red-200 border-2 mr-3">
+              <button
+                className="rounded-lg border-gray-900 bg-red-200 border-2 mr-3"
+                onClick={() => handleDelete(workout._id)}
+              >
                 Delete
               </button>
             </div>
