@@ -3,7 +3,7 @@ const WorkoutList = () => {
   const [workouts, setWorkout] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3500/api/workouts")
+    fetch("https://motul-backend.vercel.app/api/workouts/")
       .then((res) => res.json())
       .then((res) => {
         setWorkout(res);
@@ -20,9 +20,12 @@ const WorkoutList = () => {
         Workouts:{" "}
       </div>
       {workouts.length > 0 &&
-        workouts.map((workout) => {
+        workouts.map((workout, index) => {
           return (
-            <div className="flex flex-row gap-2 mb-3 border-2 border-gray-400 bg-gray-300 font-semibold rounded-lg p-1">
+            <div
+              className="flex flex-row gap-2 mb-3 border-2 border-gray-400 bg-gray-300 font-semibold rounded-lg p-1"
+              key={index}
+            >
               <div className="flex-1 flex flex-row ">
                 <div>
                   <span className="font-bold"> Name:</span> {workout.name}
