@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-const WorkoutList = () => {
-  const [workouts, setWorkout] = useState([]);
+
+const WorkoutList = ({ setCurrentWorkout, setHidden }) => {
+  const [workouts, setWorkouts] = useState([]);
+
+  const handleUpdate = (workout) => {
+    setHidden(false);
+    setCurrentWorkout(workout);
+  };
 
   useEffect(() => {
     fetch("https://motul-backend.vercel.app/api/workouts/")
       .then((res) => res.json())
       .then((res) => {
-        setWorkout(res);
+        setWorkouts(res);
       });
   }, []);
 
@@ -43,7 +49,12 @@ const WorkoutList = () => {
                   {workout.intensity}
                 </div>
               </div>
-
+              <button
+                className="rounded-lg border-gray-900 bg-red-200 border-2 mr-3"
+                onClick={() => handleUpdate(workout)}
+              >
+                Update
+              </button>
               <button className="rounded-lg border-gray-900 bg-red-200 border-2 mr-3">
                 Delete
               </button>

@@ -37,6 +37,7 @@ const AddWorkoutModal = () => {
         onSubmit={handleSubmit}
         className="w-[375px] flex flex-col justify-center items-center border-2 rounded-xl mt-32 px-4"
       >
+        ADD DATA
         <div className="grid grid-cols-2 gap-2 py-2 ">
           <label className="label" htmlFor="name">
             Name
