@@ -20,7 +20,7 @@ const LandingPage = () => {
       });
   };
   return (
-    <>
+    <div className="rounded-3xl shadow-xl m-4 bg-lc-#B4D0CA pb-4">
       <AddWorkoutModal fetchData={fetchData} />
       <WorkoutList
         setCurrentWorkout={setCurrentWorkout}
@@ -34,7 +34,7 @@ const LandingPage = () => {
         setHidden={setHidden}
         fetchData={fetchData}
       />
-    </>
+    </div>
   );
 };
 
