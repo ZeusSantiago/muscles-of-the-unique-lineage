@@ -22,7 +22,7 @@ const WorkoutList = ({ setCurrentWorkout, setHidden, workouts, fetchData }) => {
   }, [workouts]);
 
   return (
-    <div className="ml-5 mt-5 flex flex-col p-2 border-2 border-black w-1/2 h-auto  rounded-lg bg-white">
+    <div className="ml-5 m-5 flex flex-col p-2 border-2 border-black w-1/2 h-auto  rounded-lg bg-white">
       <div className="font-bold text-xl mb-2 text-center border-b-2 border-black bg-gray-500 rounded-lg shadow-xl">
         Workouts:{" "}
       </div>

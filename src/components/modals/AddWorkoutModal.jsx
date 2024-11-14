@@ -33,10 +33,10 @@ const AddWorkoutModal = ({ fetchData }) => {
   };
 
   return (
-    <>
+    <div className="">
       <form
         onSubmit={handleSubmit}
-        className="w-[375px] flex flex-col justify-center items-center border-2 rounded-xl mt-32 px-4"
+        className="w-[375px] flex flex-col justify-center items-center border-2 rounded-xl px-4"
       >
         ADD DATA
         <div className="grid grid-cols-2 gap-2 py-2 ">
@@ -104,7 +104,7 @@ const AddWorkoutModal = ({ fetchData }) => {
           Submit
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
