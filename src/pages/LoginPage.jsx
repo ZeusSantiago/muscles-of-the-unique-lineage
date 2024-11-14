@@ -8,33 +8,40 @@ const LoginPage = () => {
           LOGIN PAGE
         </h2>
       </div>
-      <div className="h-64 bg-lc-#B4D0CA w-96 m-2  shadow-lg rounded-xl p-4">
-        <div className="flex flex-col">
-          <label for="username">
-            <b>Username</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            className="rounded-xl px-2 my-2"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label for="Password">
-            <b>Password</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter Password"
-            className="rounded-xl px-2 my-2"
-          />
-          <div className="flex justify-center">
-            <button className="border-2 w-20 rounded-lg mt-2 font-bold">
-              Login
-            </button>
+      <form action="/login" method="POST">
+        <div className="h-64 bg-lc-#B4D0CA w-96 m-2  shadow-lg rounded-xl p-4">
+          <div className="flex flex-col">
+            <label for="username">
+              <b>Username</b>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              className="rounded-xl px-2 my-2"
+              name="username"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label for="Password">
+              <b>Password</b>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Password"
+              className="rounded-xl px-2 my-2"
+              name="password"
+            />
+            <div className="flex justify-center">
+              <button
+                className="border-2 w-20 rounded-lg mt-2 font-bold"
+                type="submit"
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
