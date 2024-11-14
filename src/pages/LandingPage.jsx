@@ -20,21 +20,19 @@ const LandingPage = () => {
       });
   };
   return (
-    <div className="rounded-3xl shadow-xl m-4 bg-lc-#B4D0CA pb-4">
-      <AddWorkoutModal fetchData={fetchData} />
-      <WorkoutList
-        setCurrentWorkout={setCurrentWorkout}
-        setHidden={setHidden}
-        workouts={workouts}
-        fetchData={fetchData}
-      />
-      <UpdateWorkoutModal
-        workoutData={currentWorkout}
-        hidden={hidden}
-        setHidden={setHidden}
-        fetchData={fetchData}
-      />
-    </div>
+    <>
+      <div className="bg-red-700">
+        <button>Add Routine</button>
+      </div>
+      <div>
+        <WorkoutList
+          setCurrentWorkout={setCurrentWorkout}
+          setHidden={setHidden}
+          workouts={workouts}
+          fetchData={fetchData}
+        />
+      </div>
+    </>
   );
 };
 
