@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/home" element={<LandingPage />} />
+          <Route path="/" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,7 +1,11 @@
-import React from "react";
+import RequestsList from "../components/RequestsList.jsx";
 
 const RequestsPage = () => {
-  return <div>RequestsPage WIP!!! COMPLETE BACKEND FIRST!</div>;
+  return (
+    <div>
+      <RequestsList />
+    </div>
+  );
 };
 
 export default RequestsPage;

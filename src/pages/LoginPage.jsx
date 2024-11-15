@@ -24,7 +24,7 @@ const LoginPage = () => {
             <b>Password</b>
           </label>
           <input
-            type="text"
+            type="password"
             placeholder="Enter Password"
             className="rounded-xl px-2 my-2"
           />
