@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import CreateGroupPage from "./pages/CreateGroupPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import RequestsPage from "./pages/RequestsPage";
+import GroupPage from "./pages/GroupPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+
           <Route path="/register" element={<RegistrationPage />} />
           <Route element={<UserProtectedRoutes />}>
             <Route path="/" element={<LandingPage />} />
@@ -29,10 +31,14 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/creategroup" element={<CreateGroupPage />} />
             <Route path="/user" element={<UserProfilePage />} />
+            <Route path="/group-page" element={<GroupPage />} />
           </Route>
           <Route element={<AdminProtectedRoutes />}>
             <Route path="/requests" element={<RequestsPage />} />
           </Route>
+
+          
+
         </Routes>
       </BrowserRouter>
     </div>
