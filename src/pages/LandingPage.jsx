@@ -53,7 +53,6 @@ const LandingPage = () => {
           workouts={workouts}
           fetchData={fetchData}
         />
-        <RequestsList />
       </div>
     </>
   );

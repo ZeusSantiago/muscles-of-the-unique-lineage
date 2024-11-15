@@ -10,7 +10,7 @@ const LoginPage = () => {
       </div>
       <div className="h-64 bg-lc-#B4D0CA w-96 m-2  shadow-lg rounded-xl p-4">
         <div className="flex flex-col">
-          <label for="username">
+          <label htmlFor="username">
             <b>Username</b>
           </label>
           <input
@@ -20,7 +20,7 @@ const LoginPage = () => {
           />
         </div>
         <div className="flex flex-col">
-          <label for="Password">
+          <label htmlFor="Password">
             <b>Password</b>
           </label>
           <input
