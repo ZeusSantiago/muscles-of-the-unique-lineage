@@ -14,6 +14,8 @@ import CreateGroupPage from "./pages/CreateGroupPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import RequestsPage from "./pages/RequestsPage";
 import GroupPage from "./pages/GroupPage";
+import JoinGroupPage from "./pages/JoinGroupPage";
+import CreateGroupPage from "./pages/CreateGroupPage";
 
 function App() {
   return (
@@ -37,8 +39,9 @@ function App() {
             <Route path="/requests" element={<RequestsPage />} />
           </Route>
 
-          
-
+          <Route path="/group-page" element={<GroupPage />} />
+          <Route path="/join-group" element={<JoinGroupPage />} />
+          <Route path="/create-group" element={<CreateGroupPage />} />
         </Routes>
       </BrowserRouter>
     </div>
