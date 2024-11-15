@@ -1,8 +1,13 @@
-import React from "react";
-
 const LoginPage = () => {
+  const [formDetails, setFormDetails] = useState({
+    email: "",
+    password: "",
+  });
+
+  function formChange() {}
+
   return (
-    <div className="m-5 rounded-xl">
+    <div className="m-5 rounded-xl flex flex-col justify-center items-center">
       <div className="flex justify-center">
         <h2 className="text-center font-extrabold border-[1.5px] px-4 rounded-md border-slate-500 bg-lc-#B4D0CA">
           LOGIN PAGE
@@ -11,10 +16,11 @@ const LoginPage = () => {
       <form action="/login" method="POST">
         <div className="h-64 bg-lc-#B4D0CA w-96 m-2  shadow-lg rounded-xl p-4">
           <div className="flex flex-col">
-            <label for="username">
+            <label htmlFor="username">
               <b>Username</b>
             </label>
             <input
+              id="username"
               type="text"
               placeholder="Enter Username"
               className="rounded-xl px-2 my-2"
@@ -22,11 +28,12 @@ const LoginPage = () => {
             />
           </div>
           <div className="flex flex-col">
-            <label for="Password">
+            <label htmlFor="password">
               <b>Password</b>
             </label>
             <input
-              type="text"
+              id="password"
+              type="password"
               placeholder="Enter Password"
               className="rounded-xl px-2 my-2"
               name="password"
