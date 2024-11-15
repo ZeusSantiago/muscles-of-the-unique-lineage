@@ -1,3 +1,4 @@
+import RequestsList from "../components/RequestsList.jsx";
 import RoutinesList from "../components/RoutinesList.jsx";
 import WorkoutList from "../components/WorkoutList.jsx";
 import { useState } from "react";
