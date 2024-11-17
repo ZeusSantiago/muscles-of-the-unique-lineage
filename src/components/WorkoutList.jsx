@@ -1,30 +1,30 @@
 import { useEffect, useState } from "react";
+import { axiosPrivate } from "../api/axios";
+import { useWorkoutContext } from "../contexts/WorkoutContextProvider";
 
-const WorkoutList = ({ setCurrentWorkout, setHidden, workouts, fetchData }) => {
-  const handleUpdate = (workout) => {
-    setHidden(false);
-    setCurrentWorkout(workout);
-  };
+const WorkoutList = () => {
+  const { workouts, fetchWorkouts, deleteWorkout } = useWorkoutContext();
+
+  const handleUpdate = (workout) => {};
 
   const handleDelete = (id) => {
-    fetch("https://motul-backend.vercel.app/api/workouts/" + id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => fetchData());
+    deleteWorkout(id);
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+  const refresh = () => {
+    fetchWorkouts();
+  };
 
   useEffect(() => {
-    console.log(`workouts: ${workouts}`);
-  }, [workouts]);
+    if (workouts.length == 0) {
+      fetchWorkouts();
+    }
+  }, []);
 
   return (
     <div className="ml-5 m-5 flex flex-col p-2 border-2 border-black w-1/2 h-auto  rounded-lg bg-white">
       <div className="font-bold text-xl mb-2 text-center border-b-2 border-black bg-gray-500 rounded-lg shadow-xl">
-        Workouts:{" "}
+        Workouts:
       </div>
       {workouts.length > 0 &&
         workouts.map((workout, index) => {
@@ -65,6 +65,10 @@ const WorkoutList = ({ setCurrentWorkout, setHidden, workouts, fetchData }) => {
             </div>
           );
         })}
+
+      <button className="bg-blue-200" onClick={refresh}>
+        REFRESH
+      </button>
     </div>
   );
 };

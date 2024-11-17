@@ -15,33 +15,37 @@ import UserProfilePage from "./pages/UserProfilePage";
 import RequestsPage from "./pages/RequestsPage";
 import GroupPage from "./pages/GroupPage";
 
+import AuthContextProvider from "./contexts/AuthContextProvider";
+import WorkoutContextProvider from "./contexts/WorkoutContextProvider";
+
 function App() {
   return (
-    <div className="bg-lc-#F9F4F5 min-h-dvh">
-      <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
+    <AuthContextProvider>
+      <WorkoutContextProvider>
+        <div className="bg-lc-#F9F4F5 min-h-dvh">
+          <BrowserRouter>
+            <Nav />
+            <Routes>
+              <Route path="/login" element={<LoginPage />} />
 
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route element={<UserProtectedRoutes />}>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/community" element={<CommunityPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/creategroup" element={<CreateGroupPage />} />
-            <Route path="/user" element={<UserProfilePage />} />
-            <Route path="/group-page" element={<GroupPage />} />
-          </Route>
-          <Route element={<AdminProtectedRoutes />}>
-            <Route path="/requests" element={<RequestsPage />} />
-          </Route>
-
-          
-
-        </Routes>
-      </BrowserRouter>
-    </div>
+              <Route path="/register" element={<RegistrationPage />} />
+              <Route element={<UserProtectedRoutes />}>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/community" element={<CommunityPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/creategroup" element={<CreateGroupPage />} />
+                <Route path="/user" element={<UserProfilePage />} />
+                <Route path="/group-page" element={<GroupPage />} />
+              </Route>
+              <Route element={<AdminProtectedRoutes />}>
+                <Route path="/requests" element={<RequestsPage />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </WorkoutContextProvider>
+    </AuthContextProvider>
   );
 }
 
