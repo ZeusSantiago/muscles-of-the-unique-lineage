@@ -15,7 +15,6 @@ import UserProfilePage from "./pages/UserProfilePage";
 import RequestsPage from "./pages/RequestsPage";
 import GroupPage from "./pages/GroupPage";
 import JoinGroupPage from "./pages/JoinGroupPage";
-import CreateGroupPage from "./pages/CreateGroupPage";
 
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import WorkoutContextProvider from "./contexts/WorkoutContextProvider";
@@ -36,9 +35,10 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/community" element={<CommunityPage />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/creategroup" element={<CreateGroupPage />} />
+                <Route path="/create-group" element={<CreateGroupPage />} />
                 <Route path="/user" element={<UserProfilePage />} />
                 <Route path="/group-page" element={<GroupPage />} />
+                <Route path="/join-group-page" element={<JoinGroupPage />} />
               </Route>
               <Route element={<AdminProtectedRoutes />}>
                 <Route path="/requests" element={<RequestsPage />} />
