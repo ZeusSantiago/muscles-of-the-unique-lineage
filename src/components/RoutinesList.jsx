@@ -1,30 +1,10 @@
 import { useEffect, useState } from "react";
 
-const RoutinesList = ({
-  setCurrentRoutine,
-  setHidden,
-  routines,
-  fetchData,
-}) => {
-  const handleUpdate = (routine) => {
-    setHidden(false);
-    setCurrentRoutine(routine);
-  };
+const RoutinesList = () => {
+  const routines = [];
 
-  const handleDelete = (id) => {
-    fetch("https://motul-backend.vercel.app/api/routines/" + id, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => fetchData());
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    console.log(`routines: ${routines}`);
-  }, [routines]);
+  const handleUpdate = (routine) => {};
+  const handleDelete = (id) => {};
 
   return (
     <div className="ml-5 m-5 flex flex-col p-2 border-2 border-black w-1/2 h-auto  rounded-lg bg-white">
