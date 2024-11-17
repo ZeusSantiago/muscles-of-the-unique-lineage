@@ -14,6 +14,8 @@ import CreateGroupPage from "./pages/CreateGroupPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import RequestsPage from "./pages/RequestsPage";
 import GroupPage from "./pages/GroupPage";
+import JoinGroupPage from "./pages/JoinGroupPage";
+import CreateGroupPage from "./pages/CreateGroupPage";
 
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import WorkoutContextProvider from "./contexts/WorkoutContextProvider";
