@@ -46,35 +46,7 @@ export default function AuthContextProvider({ children }) {
     if (auth == "") {
       attemptRefresh();
     } else {
-      async function attemptRefresh() {
-        try {
-          const refRes = await axios.get(
-            "https://motul-backend.vercel.app/api/users/refresh",
-            {
-              withCredentials: true,
-            }
-          );
-
-          if (refRes.status === 200) {
-            axiosPrivate.defaults.headers.common[
-              "Authorization"
-            ] = `BEARER ${refRes.data.accessToken}`;
-
-            console.log(`access token refreshed ${refRes.data.accessToken}`);
-            setAuth(refRes.data.accessToken);
-            setAuthResolved(false);
-          }
-        } catch (error) {
-          console.log("ref token invalid", error);
-          setAuthResolved(false);
-        }
-      }
-
-      if (auth == "") {
-        attemptRefresh();
-      } else {
-        setAuthResolved(true);
-      }
+      setAuthResolved(true);
     }
   }, []);
 
